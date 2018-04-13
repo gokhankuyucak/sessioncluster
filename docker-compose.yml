@@ -1,0 +1,27 @@
+version: '2.3'
+
+services:
+  db:
+   image: redis
+   hostname: redis
+   ports:
+     - "6379:6379"
+   restart: always
+  app1:
+   build: app
+   restart: always
+   links:
+     - "db:redis"
+   ports:
+     - "8099"
+   scale: 3
+  haproxy:
+   image: dockercloud/haproxy
+   ports:
+     - "80:80"
+     - "1936:1936"
+   restart: always
+   links:
+     - app1:app1
+   volumes:
+     - /var/run/docker.sock:/var/run/docker.sock
