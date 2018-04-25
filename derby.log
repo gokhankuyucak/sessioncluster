@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Wed Apr 25 15:58:31 EET 2018:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.1.0 - (1808820): instance a816c00e-0162-fce2-4bfa-000011c030b8 
+on database directory D:\db\contact_db with class loader java.net.URLClassLoader@17cbdf50 
+Loaded from file:/C:/Users/gokhan.kuyucak/.m2/repository/org/apache/derby/derby/10.14.1.0/derby-10.14.1.0.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_162-b12
+user.dir=D:\Documents\Personal\Spring_Boot\sessionsample
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

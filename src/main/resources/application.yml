@@ -1,5 +1,17 @@
 spring:
   profiles.active: test
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.DerbyDialect
+  datasource:
+    name: demo
+    url: jdbc:derby:/db/contact_db;create=true
+    driver-class-name: org.apache.derby.jdbc.EmbeddedDriver
+    continue-on-error: true
 logging:
   config: classpath:logback.xml
 ---

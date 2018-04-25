@@ -1,10 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>List Contacts</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/4.0.0/css/bootstrap.min.css}" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" media="all"
+          href="/css/style.css" th:href="@{css/style.css}" />
 </head>
 <body>
-$END$
+<div class="container">
+    <div th:if="${not #lists.isEmpty(contacts)}">
+        <h2>Contact List</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Number</th>
+                <th>List</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <tr th:each="contact : ${contacts}">
+                <td th:text="${contact.id}"></td>
+                <td th:text="${contact.name}"></td>
+                <td th:text="${contact.number}"></td>
+                <td><a th:href="${'/contact/show/' + contact.id}">View</a> </td>
+                <td><a th:href="${'/contact/edit/' + contact.id}">Edit</a> </td>
+                <td><a th:href="${'/contact/delete/' + contact.id}">Delete</a> </td>
+            </tr>
+        </table>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <a href="/contact/new">New Contact</a>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
